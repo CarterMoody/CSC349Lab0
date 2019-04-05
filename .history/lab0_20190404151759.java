@@ -79,7 +79,7 @@ class algorithms{
         endTimeNlog = System.nanoTime();
         //System.out.println("StartTime: " + System.nanoTime());
         //System.out.println("EndTime: " + System.nanoTime());
-        runTime = (endTimeNlog-startTimeNlog) / 1000000;
+        runTime = (endTimeNlog-startTimeNlog) / 1;
         System.out.println("RunTimeNlogN:" + (runTime));
     }
 }
@@ -89,45 +89,27 @@ class RunTimes{
     public long i;
     public long j;
     public long k;
-
     public static void main(String args[]) throws IOException, IllegalArgumentException {
 
         Scanner sc = new Scanner(System.in);
-        //System.out.print("Enter N Value: ");
-        //String userInput = sc.nextLine();
-        long x = 0;
+        System.out.print("Enter N Value: ");
+        String userInput = sc.nextLine();
 
         long n;     // user input option                             
 
-                //n = sc.nextInt();
+        /* loop until quit */
+        while ((n = userInput.charAt(0)) != 'q') {
 
-                for(x = 1000; x < 100000000; x=x*2)
-                    algorithms.logarithmicAlgorithm(x);
-                    
-                x = 0;
-
-                for(x = 1000; x < 100000000; x=x*2)
-                    algorithms.linearAlgorithm(x);
-
-                x = 0;
-
-                for(x = 1000; x < 100000000; x=x*2)
-                    algorithms.NlogNAlgorithm(x);
-
-                x = 0;
-                
-                for(x = 1000; x <= 512000; x=x*2)
-                  algorithms.quadraticAlgorithm(x);
-
-                x = 0;
-
-                for(x = 1000; x <= 8000; x=x*2)
-                   algorithms.cubicAlgorithm(x);
-
-                x = 0;
-
-
-
+                //System.out.println("Running with N: ");
+                algorithms.linearAlgorithm(n);
+                algorithms.quadraticAlgorithm(n);
+                algorithms.cubicAlgorithm(n);
+                algorithms.logarithmicAlgorithm(n);
+                algorithms.NlogNAlgorithm(n);
+                //printRunTimes();
+            System.out.print("Enter N Value: ");
+            userInput = sc.nextLine();
+        }
         
         sc.close();
         

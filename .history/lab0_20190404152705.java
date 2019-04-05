@@ -89,45 +89,30 @@ class RunTimes{
     public long i;
     public long j;
     public long k;
-
     public static void main(String args[]) throws IOException, IllegalArgumentException {
 
         Scanner sc = new Scanner(System.in);
-        //System.out.print("Enter N Value: ");
+        System.out.print("Enter N Value: ");
         //String userInput = sc.nextLine();
-        long x = 0;
 
         long n;     // user input option                             
 
-                //n = sc.nextInt();
+        /* loop until quit */
+        //while ((n = sc.nextInt() != 'q')) {
+        
+                n = sc.nextInt();
 
-                for(x = 1000; x < 100000000; x=x*2)
-                    algorithms.logarithmicAlgorithm(x);
-                    
-                x = 0;
-
-                for(x = 1000; x < 100000000; x=x*2)
-                    algorithms.linearAlgorithm(x);
-
-                x = 0;
-
-                for(x = 1000; x < 100000000; x=x*2)
-                    algorithms.NlogNAlgorithm(x);
-
-                x = 0;
-                
-                for(x = 1000; x <= 512000; x=x*2)
-                  algorithms.quadraticAlgorithm(x);
-
-                x = 0;
-
-                for(x = 1000; x <= 8000; x=x*2)
-                   algorithms.cubicAlgorithm(x);
-
-                x = 0;
-
-
-
+                System.out.print("Running with N: ");
+                System.out.println(n);
+                algorithms.linearAlgorithm(n);
+                algorithms.quadraticAlgorithm(n);
+                algorithms.cubicAlgorithm(n);
+                algorithms.logarithmicAlgorithm(n);
+                algorithms.NlogNAlgorithm(n);
+                //printRunTimes();
+            //System.out.print("Enter N Value: ");
+            //userInput = sc.nextLine();
+        
         
         sc.close();
         
